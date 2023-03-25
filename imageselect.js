@@ -1,10 +1,13 @@
 /*
  * ImageSelect jQuery Plugin
- * Version 1.2
+ * Version 1.3
  *
+ * xxxx.xx.xx Version 1.2
  * lgalvin
- * http://www.liam-galvin.co.uk/imageselect
- *
+ * http://www.liam-galvin.co.uk/imageselect ← no longer exists
+ * 2023.03.26 Version 1.3
+ * h.aoshima
+ * https://github.com/blue-islands/imageselect
  */
 
 
