@@ -79,9 +79,5 @@ lock – ロックする次元、幅または高さ。デフォルトは「heigh
 
 記事のソース：[http://www.liam-galvin.co.uk/imageselect/](http://www.liam-galvin.co.uk/imageselect/)
 
---- 
-
-注意: この翻訳は機械的に行われたものであり、文法や意味の誤りが含まれている可能性があります。
-
 ## Demo
 https://blue-islands.github.io/imageselect/
