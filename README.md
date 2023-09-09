@@ -10,7 +10,7 @@ ImageSelectは、見た目の良いドロップダウンを使用してユーザ
 
 例：
 
-```html
+```javascript
 <select name="logo"> 
 <option value="1">/images/whatever.jpg</option>
 <option value="2">/images/something.png</option>
@@ -20,7 +20,7 @@ ImageSelectは、見た目の良いドロップダウンを使用してユーザ
 
 次に、javascript、スタイルシート、画像を含め、画像のパスが正しいことを確認するためにcssを変更するだけです。
 
-```html
+```javascript
 <script src="/imageselect/imageselect.js" type="text/javascript"></script>
 <link href="/imageselect/imageselect.css" media="screen" rel="stylesheet" type="text/css" />
 ```
