@@ -13,31 +13,31 @@
  */
 
 (function ($) {
-  var methods = {
+  const methods = {
     init: function (options) {
       if (!/select/i.test(this.tagName)) {
         return false;
       }
 
-      var element = $(this);
-      var selectName = element.attr("name");
-      var id = "jq_imageselect_" + selectName;
+      const element = $(this);
+      const selectName = element.attr("name");
+      const id = "jq_imageselect_" + selectName;
 
       if ($("#" + id).length > 0) {
         //already exists
         return;
       }
 
-      var iWidth =
+      const iWidth =
         options.width > options.dropdownWidth
           ? options.width
           : options.dropdownWidth;
-      var imageSelect = $("<div>").attr("id", id).addClass("jqis");
+      const imageSelect = $("<div>").attr("id", id).addClass("jqis");
       imageSelect
         .css("width", iWidth + "px")
         .css("height", options.height + "px");
 
-      var header = $("<div>").addClass("jqis_header");
+      const header = $("<div>").addClass("jqis_header");
       header.css({
         width: options.width + "px",
         height: options.height + "px",
@@ -46,7 +46,7 @@
         border: "1px solid " + options.borderColor,
       });
 
-      var dropdown = $("<div>").addClass("jqis_dropdown");
+      const dropdown = $("<div>").addClass("jqis_dropdown");
       dropdown
         .css({
           width: options.dropdownWidth + "px",
@@ -56,7 +56,7 @@
         })
         .hide();
 
-      var selectedImage = $("option:selected", element).text();
+      const selectedImage = $("option:selected", element).text();
       header.attr("lock", options.lock);
       if (options.lock == "height") {
         header.append('<img style="height:' + (options.height - 3) + 'px" />');
@@ -64,7 +64,7 @@
         header.append('<img style="width:' + (options.width - 75) + 'px" />');
       }
 
-      var $options = $("option", element);
+      const $options = $("option", element);
       $options.each(function (i, el) {
         dropdown.append(
           '<img style="width:100%" onclick="jQuery(\'select[name=' +
@@ -92,7 +92,7 @@
         );
       });
 
-      var w = 0;
+      let w = 0;
       $(".jqis_dropdown img")
         .on("mouseover", function () {
           $(this).css("opacity", 1);
@@ -111,12 +111,12 @@
       });
     },
     update: function (options) {
-      var element = $(this);
-      var selectName = element.attr("name");
-      var id = "jq_imageselect_" + selectName;
+      const element = $(this);
+      const selectName = element.attr("name");
+      const id = "jq_imageselect_" + selectName;
 
       if ($("#" + id + " .jqis_header").length == 1) {
-        var ffix = false;
+        let ffix = false;
 
         if ($("#" + id + " .jqis_header img").attr("src") != options.src) {
           ffix = true; //run fix for firefox
@@ -169,10 +169,10 @@
       }
     },
     open: function () {
-      var element = $(this);
-      var selectName = element.attr("name");
-      var id = "jq_imageselect_" + selectName;
-      var w = 0;
+      const element = $(this);
+      const selectName = element.attr("name");
+      const id = "jq_imageselect_" + selectName;
+      // const w = 0;
 
       if ($("#" + id).length == 1) {
         if ($("#" + id + " .jqis_dropdown").is(":visible")) {
@@ -182,7 +182,7 @@
             .fadeOut();
         } else {
           $("#" + id + " .jqis_dropdown").stop();
-          var mh = $("#" + id + " .jqis_dropdown")
+          let mh = $("#" + id + " .jqis_dropdown")
             .css("max-height")
             .replace(/px/, "");
           mh = parseInt(mh);
@@ -191,16 +191,16 @@
           $("#" + id + " .jqis_dropdown img").each(function (i, el) {
             window.imageHeightTotal = window.imageHeightTotal + $(el).height();
           });
-          var ih = window.imageHeightTotal;
+          let ih = window.imageHeightTotal;
           mh = ih < mh && ih > 0 ? ih : mh;
           $("#" + id + " .jqis_dropdown").height(mh);
         }
       }
     },
     close: function () {
-      var element = $(this);
-      var selectName = element.attr("name");
-      var id = "jq_imageselect_" + selectName;
+      const element = $(this);
+      const selectName = element.attr("name");
+      const id = "jq_imageselect_" + selectName;
       if ($("#" + id).length == 1) {
         $("#" + id + " .jqis_dropdown")
           .slideUp()
@@ -211,9 +211,9 @@
       if (!/select/i.test(this.tagName)) {
         return false;
       }
-      var element = $(this);
-      var selectName = element.attr("name");
-      var id = "jq_imageselect_" + selectName;
+      const element = $(this);
+      const selectName = element.attr("name");
+      const id = "jq_imageselect_" + selectName;
       if ($("#" + id).length > 0) {
         $("#" + id).remove();
         $("select[name=" + selectName + "]").show();
@@ -227,7 +227,7 @@
       method = "init";
     }
 
-    var settings = {
+    let settings = {
       width: 200,
       height: 75,
       dropdownHeight: 250,
